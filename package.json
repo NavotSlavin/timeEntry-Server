@@ -1,12 +1,12 @@
 {
-  "name": "finalProject",
+  "name": "eLoomina project",
   "version": "1.0.0",
-  "description": "Navot and Avia Final Project",
+  "description": "eLoomina time entry project",
   "private": true,
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/navot-moveo/finalProject.git"
+    "url": "git+https://github.com/NavotSlavin/timeEntry-Server.git"
   },
   "dependencies": {
     "async": "^2.6.3",
