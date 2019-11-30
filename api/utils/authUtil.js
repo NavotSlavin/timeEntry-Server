@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 
 //this method compare the un hash password with the hash password
 function comparePasswords(plainPassword, encryptPassword, cb){
