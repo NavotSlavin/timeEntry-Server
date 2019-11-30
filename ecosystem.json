@@ -22,7 +22,7 @@
           "ec2-34-245-19-84.eu-west-1.compute.amazonaws.com"
         ],
         // Branch
-        "ref": "origin/master",
+        "ref": "origin/development",
         // Git repository to clone
         "repo": "https://github.com/NavotSlavin/timeEntry-Server.git",
         // Path of the application on target servers
