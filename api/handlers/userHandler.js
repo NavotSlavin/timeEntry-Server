@@ -5,9 +5,11 @@ let User = require('../../db/models/userModel');
 function addUser(user, callback){
   try {
     if(user){
+      console.log("im here addUser 2 all good")
       let newUser = new User(user);
       newUser.save(callback);
     } else {
+      console.log("im here addUser 2 err")
       throw new Error("Add User validation failed.")
     }
   } catch (error){

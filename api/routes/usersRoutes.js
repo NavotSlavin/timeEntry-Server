@@ -13,10 +13,4 @@ router.route('/register')
 router.route('/login')
     .post(userController.authenticate, userController.signUser)
 
-//------------------------------------- validating token -------------------------------------//
-//------------------------------------- from here all the request are token valid  -------------------------------------//
-
-// router.use(userController.verifyCookie);
-
-
 module.exports = router;
