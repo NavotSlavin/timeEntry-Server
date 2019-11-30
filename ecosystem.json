@@ -1,0 +1,43 @@
+{
+    // Applications part
+    "apps": [
+      {
+        "name": "eLoomina",
+        "script": "./app.js",
+        // Environment variables injected when starting with --env production
+        // http://pm2.keymetrics.io/docs/usage/application-declaration/#switching-to-different-environments
+        "env": {
+          // "NODE_ENV": "development"
+        }
+      }
+    ],
+    // Deployment part
+    // Here you describe each environment
+    "deploy": {
+      "development": {
+        "key": "~/Desktop/work/pemFiles/eLoomina_dev.pem",
+        "user": "ubuntu",
+        // Multi host is possible, just by passing IPs/hostname as an array
+        "host": [
+          "ec2-34-245-19-84.eu-west-1.compute.amazonaws.com"
+        ],
+        // Branch
+        "ref": "origin/master",
+        // Git repository to clone
+        "repo": "git@github.com:NavotSlavin/eLoomina-Server.git",
+        // Path of the application on target servers
+        "path": "/home/ubuntu/eLoomina-Server",
+        // Can be used to give options in the format used in the configura-
+        // tion file.  This is useful for specifying options for which there
+        // is no separate command-line flag, see 'man ssh'
+        // can be either a single string or an array of strings
+        "ssh_options": "StrictHostKeyChecking=no",
+        // Commands to be executed on the server after the repo has been cloned
+        "post-deploy" : "mkdir -p logs && ./install-build-del-source.sh && pm2 reload ecosystem.json --env development",
+        "pre-deploy-local" : "echo 'Deploying code to servers'",
+        "env": {
+          "NODE_ENV": "development"
+        }
+      }
+    }
+  }
