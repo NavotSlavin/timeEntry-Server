@@ -24,7 +24,7 @@
         // Branch
         "ref": "origin/master",
         // Git repository to clone
-        "repo": "git@github.com:NavotSlavin/eLoomina-Server.git",
+        "repo": "https://github.com/NavotSlavin/timeEntry-Server.git",
         // Path of the application on target servers
         "path": "/home/ubuntu/eLoomina-Server",
         // Can be used to give options in the format used in the configura-
