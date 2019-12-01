@@ -5,17 +5,12 @@ let User = require('../../db/models/userModel');
 function addUser(user, callback){
   try {
     if(user){
-      console.log("im here 1")
       let newUser = new User(user);
-      console.log("newUser " + newUser)
-      console.log("im here 2")
       newUser.save(callback);
     } else {
-      console.log("im here addUser 2 err")
       throw new Error("Add User validation failed.")
     }
   } catch (error){
-    console.log("add user handler error " + error)
     throw error;
   }
 
