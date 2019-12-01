@@ -8,19 +8,14 @@ const authUtil = require('../../api/utils/authUtil.js');
 function addUser(req, res, next){
     try{
         userHandler.addUser(req.body, function(err, user){
-            console.log("req.body " + req.body)
             if(err){
-                console.log("im here 2.5 " + err)
                 next(err);
             } else{
-                console.log("im here 3")
                 res.locals["userData"] = user;
-                console.log("im here 4")
                 next();
             }
         });
     } catch(err){
-        console.log("add user hacontrollerndler error " + error)
         throw err;
     }
 
@@ -53,13 +48,11 @@ function authenticate(req, res, next) {
 function signUser(req,res,next){
     //first param is the payload, second param is the privatekey
     //async - this token will be valid for 3h
-    console.log("im here 5")
     jwt.sign({user:res.locals["userData"]}, secretUserKey, {expiresIn: '3h' }, (err, token) => {
-        console.log("im here 6")
         if(err) throw err;
-        console.log("jwt err : " + err)
-        console.log("im here 7")
         var userToSend = res.locals["userData"]
+        console.log("token jwt " + token)
+        console.log("userToSend " + userToSend)
         userToSend.token = token
         res.send(userToSend);
     });
