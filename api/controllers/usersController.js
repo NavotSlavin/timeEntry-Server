@@ -48,11 +48,9 @@ function authenticate(req, res, next) {
 function signUser(req,res,next){
     //first param is the payload, second param is the privatekey
     //async - this token will be valid for 3h
-    jwt.sign({user:res.locals["userData"]}, secretUserKey, {expiresIn: '3h' }, (err, token) => {
+    jwt.sign({user:res.locals["userData"]}, secretUserKey, { expiresIn: '1h' }, (err, token) => {
         if(err) throw err;
         var userToSend = res.locals["userData"]
-        console.log("token jwt " + token)
-        console.log("userToSend " + userToSend)
         userToSend.token = token
         res.send(userToSend);
     });
