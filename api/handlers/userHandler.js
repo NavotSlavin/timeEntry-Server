@@ -7,6 +7,7 @@ function addUser(user, callback){
     if(user){
       console.log("im here 1")
       let newUser = new User(user);
+      console.log("newUser " + newUser)
       console.log("im here 2")
       newUser.save(callback);
     } else {
