@@ -6,7 +6,7 @@ var router = express.Router();
 let timeEntryController = require("../controllers/timeEntryController.js");
 let authValidator = require('../validators/authValidator.js')
 
-// router.use(authValidator.verifyToken);
+router.use(authValidator.verifyToken);
 
 router.route('/')
     .get(timeEntryController.getTimeEntries)
