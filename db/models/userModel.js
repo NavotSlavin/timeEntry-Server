@@ -59,7 +59,7 @@ User.pre('save', function(next){
     var user = this;
     //checks if this is our first save or update,make sure that we hash the password only in the first time
     if(user.isNew) {
-        bcrypt.hash(user.password, constantSalt, function(err, hash){
+        bcrypt.hash(user.password, constantSalt, null, function(err, hash){
             if(err){
                 return next(err);
             } 
