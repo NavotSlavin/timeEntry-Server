@@ -9,6 +9,7 @@ function addUser(req, res, next){
     try{
         userHandler.addUser(req.body, function(err, user){
             if(err){
+                console.log("im here 2.5 " + err)
                 next(err);
             } else{
                 console.log("im here 3")
