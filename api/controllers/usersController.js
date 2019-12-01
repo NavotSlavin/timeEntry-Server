@@ -8,6 +8,7 @@ const authUtil = require('../../api/utils/authUtil.js');
 function addUser(req, res, next){
     try{
         userHandler.addUser(req.body, function(err, user){
+            console.log("req.body " + req.body)
             if(err){
                 console.log("im here 2.5 " + err)
                 next(err);
