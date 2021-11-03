@@ -30,6 +30,6 @@
     "node-fetch": "^2.6.0",
     "path": "^0.12.7",
     "underscore": "^1.9.1",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   }
 }
