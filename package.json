@@ -9,7 +9,7 @@
     "url": "git+https://github.com/NavotSlavin/timeEntry-Server.git"
   },
   "dependencies": {
-    "async": "^2.6.3",
+    "async": "^2.6.4",
     "bcrypt": "^3.0.7",
     "config": "^3.2.4",
     "cookie-parser": "~1.4.3",
